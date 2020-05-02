@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="LastUsedHeaderTemplate" value="Default C header template"/>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="PDOMSearchPage">
+		<item key="caseSensitive" value="false"/>
+		<item key="searchFlags" value="227191"/>
+		<list key="previousPatterns">
+			<item value="HAL_I2C_EV_IRQHandler"/>
+			<item value="HAL_I2C_EV_IRQHANDLER"/>
+			<item value="HAL_I2C_EV_IRQ"/>
+			<item value="MAX_NBYTE_SIZE"/>
+			<item value="__HAL_I2C_ENABLE_IT"/>
+			<item value="I2C_Enable_IRQ"/>
+			<item value="__HAL_UNLOCK"/>
+			<item value="hi2cXferISR"/>
+			<item value="I2C_TransferConfig"/>
+			<item value="I2C_NO_OPTION_FRAME"/>
+			<item value="I2C_Master_ISR_IT"/>
+			<item value="HAL_I2C_MspInit"/>
+		</list>
+	</section>
+	<section name="org.eclipse.cdt.internal.ui.typehierarchy.OpenTypeInHierarchyActionSettings">
+		<item key="show_namespaces" value="false"/>
+		<item key="show_classes" value="true"/>
+		<item key="show_structs" value="true"/>
+		<item key="show_typedefs" value="true"/>
+		<item key="show_enums" value="true"/>
+		<item key="show_unions" value="true"/>
+		<item key="show_functions" value="false"/>
+		<item key="show_variables" value="false"/>
+		<item key="show_enumerators" value="false"/>
+		<item key="show_macros" value="false"/>
+		<item key="show_lowlevel" value="true"/>
+		<item key="x" value="478"/>
+		<item key="y" value="0"/>
+		<item key="width" value="413"/>
+		<item key="height" value="681"/>
+	</section>
+</section>
