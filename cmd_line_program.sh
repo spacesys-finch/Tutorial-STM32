@@ -7,7 +7,7 @@
 # port=JTAG
 
 # to run this on, open command prompt and run
-# bash test_cli.sh <hex_file>
+# bash cmd_line_program.sh <hex_file>
 
 echo GO
 ST-LINK_CLI.exe -c SN=0049002C3137510B39383538 SWD -ME -P $1 -Run 0x08000000
