@@ -33,6 +33,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 UART_Example.list \
 
+OBJCOPY_HEX += \
+UART_Example.hex \
+
 OBJCOPY_BIN += \
 UART_Example.bin \
 
@@ -56,6 +59,11 @@ UART_Example.list: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+UART_Example.hex: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "UART_Example.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 UART_Example.bin: $(EXECUTABLES)
 	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "UART_Example.bin"
 	@echo 'Finished building: $@'
@@ -66,7 +74,7 @@ clean:
 	-$(RM) *
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 .PHONY: all clean dependents
 .SECONDARY:
