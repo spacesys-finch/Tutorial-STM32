@@ -83,3 +83,28 @@ void spi::check_init_constraints() {
     Error_Handler();
   }
 }
+
+// for now, just support polling mode
+//todo::: need to figure out how chip select will work --> talk to team (how store gpio struct signals in class)
+//pass which pin to 
+void spi::spi_write(uint8_t *write_data, uint16_t write_data_size, uint32_t timeout, GPIO_TypeDef *cs_port, uint32_t cs_pin, bool cs_active_high ) {
+  
+  HAL_StatusTypeDef transfer_status;
+  GPIO_PinState chip_enable = GPIO_PIN_SET;
+  GPIO_PinState chip_disable = GPIO_PIN_RESET;
+
+  if (cs_active_high == false) {
+    chip_enable = GPIO_PIN_RESET;
+    chip_disable = GPIO_PIN_SET;
+  }
+  
+  HAL_GPIO_WritePin(cs_port, cs_pin, chip_disable);
+  HAL_GPIO_WritePin(cs_port, cs_pin, chip_enable);
+  transfer_status = HAL_SPI_Transmit(this->spi_handle, write_data, write_data_size, timeout);	
+  
+  if (transfer_status != HAL_OK) {
+    //To do: Add in error checking
+  }
+
+  HAL_GPIO_WritePin(cs_port, cs_pin, chip_disable);
+}

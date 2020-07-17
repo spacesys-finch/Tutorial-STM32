@@ -4,13 +4,15 @@
 //Includes
 #include "stm32g4xx_hal_spi.h"
 
+/* SPI wrapper Class. For the moment, will assume mcu
+is the SPI master */
 class spi
   {
     SPI_HandleTypeDef spi_handle; 
     bool poll_mode; //true = polling, false = interrupt 
 
     // Constructor
-	spi(SPI_TypeDef *spi_instance, bool poll_mode);
+    spi(SPI_TypeDef *spi_instance, bool poll_mode);
 
     /* Functions to modify spi initialization pin settings.
     The constructor sets default pin settings. Make sure to run 
@@ -29,6 +31,12 @@ class spi
     void set_nssp_mode(uint32_t NSSPMode);
 
     void check_init_constraints();
+
+    //Write to slave
+    void spi_write(uint8_t *write_data, uint16_t write_data_size, uint32_t timeout, GPIO_TypeDef *cs_port, uint32_t cs_pin, bool cs_active_high );
+
+    //Read from slave
+    void spi_read();
 
   }
 
